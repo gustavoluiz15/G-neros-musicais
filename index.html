@@ -1,31 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gêneros Musicais</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Replica (sem login) — Busca & Player</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Gêneros Musicais</h1>
-    <p>Criado por <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a></p>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">♪</div>
+      <div class="brand-text">
+        <h1>Replica • Spotify Style</h1>
+        <small>Pesquisar & ouvir (sem login)</small>
+      </div>
+    </div>
+
+    <div class="search-area">
+      <input id="globalSearch" type="search" placeholder="Pesquisar artistas (ex: Lana Del Rey) — filtra os populares" />
+      <button id="openSpotifySearch">Pesquisar no Spotify</button>
+    </div>
+
+    <div class="link-area">
+      <input id="spotifyUrl" type="text" placeholder="Cole aqui URL do Spotify (artista/track/album/playlist) e pressione Enter" />
+      <button id="embedBtn">Embed</button>
+    </div>
   </header>
 
-  <nav>
-    <button class="genre-btn" data-genre="pop">Pop</button>
-    <button class="genre-btn" data-genre="funk">Funk</button>
-    <button class="genre-btn" data-genre="internacional">Internacional</button>
-  </nav>
+  <main class="main">
+    <aside class="left-col">
+      <h3>Populares</h3>
+      <div id="popularList" class="popular-list">
+        <!-- preenchido por JS -->
+      </div>
 
-  <main id="genre-container">
-    <!-- Conteúdo gerado via JS -->
+      <div class="signature">
+        <small>Feito por <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a></small>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="hero" class="hero">
+        <h2>Descubra e ouça</h2>
+        <p>Cole um link do Spotify no campo acima (ou clique em um artista popular) para ver o perfil e o player embutido.</p>
+      </div>
+
+      <section id="results" class="results hidden">
+        <div id="artistCard" class="artist-card">
+          <!-- imagem, nome e botão abrir no Spotify -->
+        </div>
+
+        <div id="embedArea" class="embed-area">
+          <!-- iframe do Spotify será inserido aqui -->
+        </div>
+
+        <div id="additional" class="additional">
+          <!-- espaço para tracks/descrição ou listas adicionais -->
+        </div>
+      </section>
+    </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Gêneros Musicais</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
