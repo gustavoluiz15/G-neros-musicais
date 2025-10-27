@@ -3,61 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Replica (sem login) — Busca & Player</title>
+  <title>Sounds — Gêneros & Artistas</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="logo">♪</div>
+      <div class="logo">S</div>
       <div class="brand-text">
-        <h1>Replica • Spotify Style</h1>
-        <small>Pesquisar & ouvir (sem login)</small>
+        <h1>Sounds</h1>
+        <small>Gêneros • Artistas • Ouvir</small>
       </div>
     </div>
 
-    <div class="search-area">
-      <input id="globalSearch" type="search" placeholder="Pesquisar artistas (ex: Lana Del Rey) — filtra os populares" />
-      <button id="openSpotifySearch">Pesquisar no Spotify</button>
-    </div>
-
-    <div class="link-area">
-      <input id="spotifyUrl" type="text" placeholder="Cole aqui URL do Spotify (artista/track/album/playlist) e pressione Enter" />
-      <button id="embedBtn">Embed</button>
-    </div>
+    <nav class="genre-tabs" role="tablist" aria-label="Gêneros">
+      <button class="tab active" data-genre="pop">Pop</button>
+      <button class="tab" data-genre="indie">Indie</button>
+      <button class="tab" data-genre="rnb">R&amp;B</button>
+      <button class="tab" data-genre="rock">Rock</button>
+      <button class="tab" data-genre="electro">Eletrônica</button>
+      <button class="tab" data-genre="mpb">MPB</button>
+    </nav>
   </header>
 
   <main class="main">
-    <aside class="left-col">
-      <h3>Populares</h3>
-      <div id="popularList" class="popular-list">
-        <!-- preenchido por JS -->
-      </div>
+    <aside class="left-panel">
+      <section class="welcome">
+        <h2>Bem-vindo</h2>
+        <p>Escolha um gênero acima e clique em um artista para ouvir suas músicas direto aqui.</p>
+      </section>
 
-      <div class="signature">
-        <small>Feito por <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a></small>
-      </div>
+      <section class="featured">
+        <h3>Em destaque</h3>
+        <div id="featuredList" class="featured-list">
+          <!-- preenchido por JS -->
+        </div>
+      </section>
+
+      <footer class="signature">
+        <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a>
+      </footer>
     </aside>
 
     <section class="content">
-      <div id="hero" class="hero">
-        <h2>Descubra e ouça</h2>
-        <p>Cole um link do Spotify no campo acima (ou clique em um artista popular) para ver o perfil e o player embutido.</p>
+      <div id="gridArea" class="grid-area">
+        <!-- cards de artistas do gênero surgem aqui -->
       </div>
 
-      <section id="results" class="results hidden">
-        <div id="artistCard" class="artist-card">
-          <!-- imagem, nome e botão abrir no Spotify -->
+      <aside class="player-area" id="playerArea">
+        <div class="player-header">
+          <div class="player-thumb" id="playerThumb"></div>
+          <div class="player-info">
+            <h3 id="playerTitle">Selecione um artista</h3>
+            <p id="playerSub">As músicas aparecerão aqui</p>
+            <a id="openOnSpotify" href="#" target="_blank" class="btn-spotify hidden">Abrir no Spotify</a>
+          </div>
         </div>
 
-        <div id="embedArea" class="embed-area">
-          <!-- iframe do Spotify será inserido aqui -->
+        <div id="playerEmbed" class="player-embed">
+          <div class="embed-placeholder">Clique em um artista para carregar o player</div>
         </div>
 
-        <div id="additional" class="additional">
-          <!-- espaço para tracks/descrição ou listas adicionais -->
+        <div id="genrePlaylists" class="genre-playlists">
+          <!-- playlists do gênero (preenchido por JS) -->
         </div>
-      </section>
+      </aside>
     </section>
   </main>
 
