@@ -1,163 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎶 Gêneros Musicais</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gêneros Musicais</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🎵 Gêneros Musicais</h1>
-    <p class="subtitle">Descubra os maiores artistas de cada estilo — do pop internacional ao funk brasileiro!</p>
+    <h1>🎶 Descubra os Gêneros Musicais</h1>
     <nav>
-      <button class="tab-button active" data-tab="pop">Pop</button>
-      <button class="tab-button" data-tab="rock">Rock</button>
-      <button class="tab-button" data-tab="hiphop">Hip Hop / Trap</button>
-      <button class="tab-button" data-tab="indie">Indie / Alternativo</button>
-      <button class="tab-button" data-tab="mpb">MPB / Brasil</button>
-      <button class="tab-button" data-tab="funk">Funk</button>
+      <button class="tab-button active" data-tab="rock">Rock</button>
+      <button class="tab-button" data-tab="pop">Pop</button>
+      <button class="tab-button" data-tab="hiphop">Hip Hop</button>
+      <button class="tab-button" data-tab="sertanejo">Sertanejo</button>
+      <button class="tab-button" data-tab="eletronica">Eletrônica</button>
     </nav>
   </header>
 
   <main>
+    <!-- ROCK -->
+    <section id="rock" class="tab-content active">
+      <h2>🎸 Rock</h2>
+      <div class="artist">
+        <h3><a href="https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2" target="_blank">The Beatles</a></h3>
+        <div class="songs">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Am0IbOxmvlSXro7N5iSfZ" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7pbDxGE6nQSZVfiFdq9lOL" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2" width="300" height="80"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3BQHpFgAp4l80e1XslIjNI" width="300" height="80"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4pbJqGIASGPr0ZpGpnWkDn" width="300" height="80"></iframe>
+        </div>
+      </div>
+
+      <div class="artist">
+        <h3><a href="https://open.spotify.com/artist/711MCceyCBcFnzjGY4Q7Un" target="_blank">Queen</a></h3>
+        <div class="songs">
+          <iframe src="https://open.spotify.com/embed/track/7tFiyTwD0nx5a1eklYtX2J" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/6l8GvAyoUZwWDgF1e4822w" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/3z8h0TU7ReDPLIbEnYhWZb" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/3z8UjygIPX9A4J6nwy0xNV" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/6RUKPb4LETWmmr3iAEQktW" width="300" height="80"></iframe>
+        </div>
+      </div>
+
+      <!-- adicione +24 artistas aqui -->
+    </section>
 
     <!-- POP -->
-    <section id="pop" class="tab-content active">
+    <section id="pop" class="tab-content">
       <h2>🎤 Pop</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb5a6b3a45d431bfeae9e9e6c4" alt="Taylor Swift">
-          <h3>Taylor Swift</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4BZMKr" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebaa2c0f647af9f6f69c6e6a30" alt="Dua Lipa">
-          <h3>Dua Lipa</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2AfZR7nUJN2" width="100%" height="380" frameborder="0"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb5b6edb3ee7f6d8e79a5d04c7" alt="The Weeknd">
-          <h3>The Weeknd</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2cEUXdJJLVG" width="100%" height="380" frameborder="0"></iframe>
+      <div class="artist">
+        <h3><a href="https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR" target="_blank">Ariana Grande</a></h3>
+        <div class="songs">
+          <iframe src="https://open.spotify.com/embed/track/3e9HZxeyfWwjeyPAMmWSSQ" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/6ocbgoVGwYJhOv1GgI9NsF" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/2b8fOow8UzyDFAE27YhOZM" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/4eV5lPNnHTH1Y8eYRj8hHk" width="300" height="80"></iframe>
+          <iframe src="https://open.spotify.com/embed/track/7uHjvJGh81Zb7N6wz0iWcp" width="300" height="80"></iframe>
         </div>
       </div>
+      <!-- adicione mais artistas -->
     </section>
 
-    <!-- ROCK -->
-    <section id="rock" class="tab-content">
-      <h2>🎸 Rock</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb9a63f2b73e087b8c79e75aa8" alt="Queen">
-          <h3>Queen</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1spT6G94GFC" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebd9c2d3f5a8bbef98c456baf8" alt="Foo Fighters">
-          <h3>Foo Fighters</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1rVvRgjX59F" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb2f8a68c4257d61e6cc2b7d32" alt="Nirvana">
-          <h3>Nirvana</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcZDD7cfEKhW" width="100%" height="380"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- HIP HOP -->
-    <section id="hiphop" class="tab-content">
-      <h2>🔥 Hip Hop / Trap</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb9c58f3dcb0ff2c303ed3d5a7" alt="Kendrick Lamar">
-          <h3>Kendrick Lamar</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb3e5d5b39c3eabce86d8a0e0c" alt="Travis Scott">
-          <h3>Travis Scott</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO3RqJ7D" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebb9fdd8df3e6c5f68bda5b0e1" alt="Drake">
-          <h3>Drake</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXb9LIXaj5WhL" width="100%" height="380"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDIE -->
-    <section id="indie" class="tab-content">
-      <h2>🌙 Indie / Alternativo</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebb19f8470d4e604f69c8f6ef2" alt="Tame Impala">
-          <h3>Tame Impala</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4fEoKR" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb4531bb9c77b9db10d20d2f7b" alt="Arctic Monkeys">
-          <h3>Arctic Monkeys</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3fRquEp6m8D" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb9a8c92dcdb833b0b4a81d8a7" alt="Lana Del Rey">
-          <h3>Lana Del Rey</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1clOuib1KtQ" width="100%" height="380"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- MPB -->
-    <section id="mpb" class="tab-content">
-      <h2>🇧🇷 MPB / Brasil</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebd5e42a8c9a2d1a30a5d6baf6" alt="Caetano Veloso">
-          <h3>Caetano Veloso</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYiR2Uqcon0X" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb4e04722f8d65c10b9b449d94" alt="Charlie Brown Jr">
-          <h3>Charlie Brown Jr</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdltD5eY7g68" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb2532db1e671e7d8b49c51d3b" alt="Djavan">
-          <h3>Djavan</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYiR2Uqcon0X" width="100%" height="380"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- FUNK -->
-    <section id="funk" class="tab-content">
-      <h2>💃 Funk Brasileiro</h2>
-      <div class="artist-grid">
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebd1f09bfbba4df7776e1b0897" alt="MC Daniel">
-          <h3>MC Daniel</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcCxkaN0t3dE" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb55b3df8b8883dc5a4f32d3d3" alt="MC Cabelinho">
-          <h3>MC Cabelinho</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3ohNx5u3I6Z" width="100%" height="380"></iframe>
-        </div>
-        <div class="artist">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb6ec7e3519f902cbb2f30f142" alt="L7nnon">
-          <h3>L7nnon</h3>
-          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWU2LcZVHsGFP" width="100%" height="380"></iframe>
-        </div>
-      </div>
-    </section>
-
+    <!-- Outras seções (hiphop, sertanejo, eletronica) -->
+    <!-- Basta seguir o mesmo padrão -->
   </main>
 
   <footer>
-    <p>© 2025 Gêneros Musicais — Feito com 🎧 por <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a></p>
+    <p>🎧 Feito com ❤️ por amantes da música | Dados via Spotify</p>
   </footer>
 
   <script src="script.js"></script>
