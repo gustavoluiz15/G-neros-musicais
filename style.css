@@ -9,19 +9,25 @@ header {
   background: #111;
   color: #fff;
   text-align: center;
-  padding: 1.2rem;
+  padding: 2rem 1rem;
+}
+
+.subtitle {
+  color: #bbb;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 nav {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .tab-button {
   background: #333;
   color: #fff;
   border: none;
-  margin: 0 4px;
-  padding: 10px 18px;
+  margin: 4px;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
@@ -48,14 +54,20 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .artist {
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.artist:hover {
+  transform: scale(1.02);
 }
 
 .artist img {
@@ -67,16 +79,14 @@ main {
   margin: 10px 0;
 }
 
-.artist a {
-  color: #111;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 footer {
   text-align: center;
   background: #111;
   color: #fff;
-  padding: 1rem;
+  padding: 1.2rem;
   margin-top: 2rem;
+}
+footer a {
+  color: #ff3366;
+  text-decoration: none;
 }
