@@ -1,31 +1,53 @@
-const data = [
+// Dados simples por gênero (você pode expandir)
+const genres = [
   {
-    genre: 'Pop',
+    genre: "Pop",
     artists: [
-      { name: 'Anitta', spotifyProfile: 'https://open.spotify.com/artist/7FNnA9vBm6EKceENgCGRMb' },
-      { name: 'Dua Lipa', spotifyProfile: 'https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we' },
-      { name: 'Harry Styles', spotifyProfile: 'https://open.spotify.com/artist/6KImCVD70vtIoJWnq6nGn3' }
-    ],
-    songs: [
-      { title: 'Levitating', spotifyEmbedId: '463CkQjx2Zk1yXoBuierM9' },
-      { title: 'Watermelon Sugar', spotifyEmbedId: '6UelLqGlWMcVH1E5c4H7lY' },
-      { title: 'Envolver', spotifyEmbedId: '6B4FZKRBgsbCjK1fQpc0hO' },
-      { title: 'Dance The Night', spotifyEmbedId: '5CtI0qwDJkDQGwXD1H1cLb' },
-      { title: 'As It Was', spotifyEmbedId: '4LRPiXqCikLlN15c3yImP7' }
+      {
+        name: "Dua Lipa",
+        profile: "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we",
+        track: "463CkQjx2Zk1yXoBuierM9"
+      },
+      {
+        name: "Shawn Mendes",
+        profile: "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+        track: "2QjOHCTQ1Jl3zawyYOpxh6"
+      },
+      {
+        name: "Ed Sheeran",
+        profile: "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V",
+        track: "3e9HZxeyfWwjeyPAMmWSSQ"
+      }
     ]
   },
   {
-    genre: 'Funk',
+    genre: "R&B",
     artists: [
-      { name: 'MC Kevin o Chris', spotifyProfile: 'https://open.spotify.com/artist/1oMiDFfKDbviT9xk2GBFcm' },
-      { name: 'Ludmilla', spotifyProfile: 'https://open.spotify.com/artist/5S2YsoJvTWXHb5bB1Jz3xj' }
-    ],
-    songs: [
-      { title: 'Evoluiu', spotifyEmbedId: '3ZRM3IzFBO2YwGc4xLmf2A' },
-      { title: 'Verdinha', spotifyEmbedId: '1fxUwsOBEl7tIMq41bFdpZ' },
-      { title: 'Tipo Gin', spotifyEmbedId: '2oxf8vvC4oWnE6jZcQ0C3J' },
-      { title: 'Tá Tum Tum', spotifyEmbedId: '3sU6HBszf7bRrSx6h1MXIr' },
-      { title: 'Vamos Pra Gaiola', spotifyEmbedId: '1v9DqE8cFvjJ5jUMb1xB3Z' }
+      {
+        name: "SZA",
+        profile: "https://open.spotify.com/artist/7tYKF4w9nC0nq9CsPZTHyP",
+        track: "1RyvyyTE3xzB2ZywiAwp0i"
+      },
+      {
+        name: "Khalid",
+        profile: "https://open.spotify.com/artist/6LuN9FCkKOj5PcnpouEgny",
+        track: "3e9HZxeyfWwjeyPAMmWSSQ"
+      }
+    ]
+  },
+  {
+    genre: "Indie",
+    artists: [
+      {
+        name: "Arctic Monkeys",
+        profile: "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH",
+        track: "3ZFTkvIE7kyPt6Nu3PEa7V"
+      },
+      {
+        name: "Tame Impala",
+        profile: "https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb",
+        track: "4LLpKhyESsyAXpc4laK94U"
+      }
     ]
   }
 ];
@@ -37,52 +59,37 @@ function el(tag, className, text) {
   return e;
 }
 
-function buildSite() {
-  const root = document.getElementById('root');
-  data.forEach(section => {
-    const sectionEl = el('section', 'genre-section');
-    const header = el('h2', 'genre-title', section.genre);
-    sectionEl.appendChild(header);
+function createArtistCard(artist) {
+  const card = el("div", "artist-card");
+  const icon = el("div");
+  icon.innerHTML = "🎧";
+  const name = el("h3", null, artist.name);
+  const link = el("a", "spotify-btn", "Perfil Spotify");
+  link.href = artist.profile;
+  link.target = "_blank";
+  const player = document.createElement("iframe");
+  player.src = `https://open.spotify.com/embed/track/${artist.track}`;
+  player.height = "80";
+  player.allow = "encrypted-media";
 
-    const artistsRow = el('div', 'artists-row');
-    section.artists.forEach(artist => {
-      const card = el('div', 'artist-card');
-      const img = el('div', 'artist-image', '🎤');
-      card.appendChild(img);
+  card.append(name, link, player);
+  return card;
+}
 
-      const name = el('h3', 'artist-name', artist.name);
-      card.appendChild(name);
+function loadGenres() {
+  const container = document.getElementById("genres");
+  genres.forEach((g) => {
+    const section = el("section");
+    const title = el("h2", "section-title", g.genre);
+    section.appendChild(title);
 
-      const link = el('a', 'spotify-btn', 'Spotify');
-      link.href = artist.spotifyProfile;
-      link.target = '_blank';
-      card.appendChild(link);
-
-      artistsRow.appendChild(card);
+    const grid = el("div", "artist-grid");
+    g.artists.forEach((a) => {
+      grid.appendChild(createArtistCard(a));
     });
-    sectionEl.appendChild(artistsRow);
-
-    const songsWrap = el('div', 'songs-wrap');
-    const songsTitle = el('h4', 'songs-title', 'Top 5 músicas');
-    songsWrap.appendChild(songsTitle);
-
-    section.songs.forEach(song => {
-      const songEl = el('div', 'song-item');
-      const title = el('div', 'song-title', song.title);
-      songEl.appendChild(title);
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://open.spotify.com/embed/track/${song.spotifyEmbedId}`;
-      iframe.width = '300';
-      iframe.height = '80';
-      iframe.allow = 'encrypted-media';
-      songEl.appendChild(iframe);
-      songsWrap.appendChild(songEl);
-    });
-
-    sectionEl.appendChild(songsWrap);
-    root.appendChild(sectionEl);
+    section.appendChild(grid);
+    container.appendChild(section);
   });
 }
 
-document.addEventListener('DOMContentLoaded', buildSite);
-
+document.addEventListener("DOMContentLoaded", loadGenres);
